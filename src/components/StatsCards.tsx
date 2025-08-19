@@ -46,7 +46,7 @@ const StatsCards = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {stats.map((stat, index) => (
-        <Card key={index} className="card-tech p-6 hover:scale-105 transition-transform duration-300">
+        <Card key={index} className="card-tech p-6">
           <div className="flex items-start justify-between mb-4">
             <div className={`p-3 rounded-lg ${stat.bgColor}`}>
               <stat.icon className={`w-6 h-6 ${stat.color}`} />

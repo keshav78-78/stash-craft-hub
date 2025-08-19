@@ -2,67 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* StashBox Design System - Decentralized Network Aesthetics
+/* StashBox Design System - Clean & Functional
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Dark tech background */
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
+    /* Clean dark background */
+    --background: 220 10% 8%;
+    --foreground: 210 20% 95%;
 
-    /* Card system with tech glass effect */
-    --card: 222 47% 7%;
-    --card-foreground: 210 40% 98%;
+    /* Subtle card system */
+    --card: 220 10% 12%;
+    --card-foreground: 210 20% 95%;
 
     /* Popover styling */
-    --popover: 222 47% 7%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 10% 12%;
+    --popover-foreground: 210 20% 95%;
 
-    /* Primary: Cyber cyan for main actions */
-    --primary: 186 100% 50%;
-    --primary-foreground: 222 47% 5%;
-    --primary-glow: 186 100% 70%;
+    /* Primary: Calm blue for actions */
+    --primary: 210 80% 60%;
+    --primary-foreground: 220 10% 8%;
+    --primary-glow: 210 80% 70%;
 
-    /* Secondary: Deep purple network accent */
-    --secondary: 266 83% 25%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary: Neutral accent */
+    --secondary: 220 10% 20%;
+    --secondary-foreground: 210 20% 95%;
 
-    /* Muted: Subtle network elements */
-    --muted: 222 47% 12%;
-    --muted-foreground: 210 20% 70%;
+    /* Muted: Subtle elements */
+    --muted: 220 10% 16%;
+    --muted-foreground: 210 10% 65%;
 
-    /* Accent: Electric blue highlights */
-    --accent: 217 91% 60%;
-    --accent-foreground: 222 47% 5%;
+    /* Accent: Soft green highlights */
+    --accent: 160 60% 50%;
+    --accent-foreground: 220 10% 8%;
 
-    /* Destructive: Warning red */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive: Soft red */
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 210 20% 95%;
 
     /* Borders and inputs */
-    --border: 222 47% 15%;
-    --input: 222 47% 12%;
-    --ring: 186 100% 50%;
+    --border: 220 10% 20%;
+    --input: 220 10% 16%;
+    --ring: 210 80% 60%;
 
     /* Network-specific colors */
-    --node-active: 120 100% 50%;
-    --node-inactive: 0 0% 50%;
-    --connection-line: 186 100% 50%;
+    --node-active: 160 60% 50%;
+    --node-inactive: 0 0% 40%;
+    --connection-line: 210 80% 60%;
     
-    /* Gradients */
-    --gradient-network: linear-gradient(135deg, hsl(186 100% 50%) 0%, hsl(266 83% 25%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(222 47% 7% / 0.8) 0%, hsl(222 47% 10% / 0.9) 100%);
-    --gradient-hero: radial-gradient(ellipse at center, hsl(186 100% 50% / 0.1) 0%, transparent 70%);
+    /* Subtle gradients */
+    --gradient-network: linear-gradient(135deg, hsl(210 80% 60%) 0%, hsl(160 60% 50%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 10% 12%) 0%, hsl(220 10% 14%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 10% 8%) 0%, hsl(220 15% 10%) 100%);
     
-    /* Shadows */
-    --shadow-glow: 0 0 30px hsl(186 100% 50% / 0.3);
-    --shadow-card: 0 8px 32px hsl(222 47% 3% / 0.5);
+    /* Subtle shadows */
+    --shadow-glow: 0 0 20px hsl(210 80% 60% / 0.2);
+    --shadow-card: 0 4px 20px hsl(220 10% 5% / 0.3);
     
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --pulse-duration: 2s;
+    /* Smooth animations */
+    --transition-smooth: all 0.2s ease;
+    --pulse-duration: 3s;
 
     --radius: 0.5rem;
 
@@ -106,13 +106,13 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  /* Network animation effects */
+  /* Subtle effects */
   .network-pulse {
     animation: networkPulse var(--pulse-duration) ease-in-out infinite;
   }
   
   .connection-flow {
-    animation: connectionFlow 3s linear infinite;
+    animation: connectionFlow 4s linear infinite;
   }
   
   .node-glow {
@@ -120,10 +120,15 @@ All colors MUST be HSL.
   }
   
   .card-tech {
-    background: var(--gradient-card);
+    background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
-    backdrop-filter: blur(10px);
     box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-tech:hover {
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow: 0 8px 32px hsl(var(--primary) / 0.1);
   }
   
   .text-gradient {
@@ -135,11 +140,11 @@ All colors MUST be HSL.
 }
 
 @keyframes networkPulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
 }
 
 @keyframes connectionFlow {
-  0% { stroke-dashoffset: 100; }
+  0% { stroke-dashoffset: 20; }
   100% { stroke-dashoffset: 0; }
 }

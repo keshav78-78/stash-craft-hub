@@ -57,19 +57,14 @@ const NetworkVisualization = () => {
           ctx.lineTo(toNode.x, toNode.y);
           
           if (conn.active) {
-            const gradient = ctx.createLinearGradient(fromNode.x, fromNode.y, toNode.x, toNode.y);
-            gradient.addColorStop(0, 'hsl(186, 100%, 50%)');
-            gradient.addColorStop(1, 'hsl(266, 83%, 50%)');
-            ctx.strokeStyle = gradient;
+            ctx.strokeStyle = 'hsl(210, 80%, 60%)';
             ctx.lineWidth = 2;
-            
-            // Animated dash for active connections
-            ctx.setLineDash([10, 5]);
-            ctx.lineDashOffset = -animationFrame * 0.5;
+            ctx.setLineDash([5, 3]);
+            ctx.lineDashOffset = -animationFrame * 0.2;
           } else {
-            ctx.strokeStyle = 'hsl(0, 0%, 50%)';
+            ctx.strokeStyle = 'hsl(0, 0%, 40%)';
             ctx.lineWidth = 1;
-            ctx.setLineDash([5, 5]);
+            ctx.setLineDash([3, 3]);
           }
           
           ctx.stroke();
@@ -82,13 +77,11 @@ const NetworkVisualization = () => {
         ctx.arc(node.x, node.y, 20, 0, 2 * Math.PI);
         
         if (node.active) {
-          // Glowing effect for active nodes
-          const glowIntensity = 0.5 + 0.3 * Math.sin(animationFrame * 0.03);
-          ctx.fillStyle = `hsla(120, 100%, 50%, ${glowIntensity})`;
-          ctx.shadowColor = 'hsl(120, 100%, 50%)';
-          ctx.shadowBlur = 20;
+          ctx.fillStyle = 'hsl(160, 60%, 50%)';
+          ctx.shadowColor = 'hsl(160, 60%, 50%)';
+          ctx.shadowBlur = 10;
         } else {
-          ctx.fillStyle = 'hsl(0, 0%, 50%)';
+          ctx.fillStyle = 'hsl(0, 0%, 40%)';
           ctx.shadowBlur = 0;
         }
         
@@ -97,7 +90,7 @@ const NetworkVisualization = () => {
         // Node border
         ctx.beginPath();
         ctx.arc(node.x, node.y, 20, 0, 2 * Math.PI);
-        ctx.strokeStyle = node.active ? 'hsl(186, 100%, 50%)' : 'hsl(0, 0%, 30%)';
+        ctx.strokeStyle = node.active ? 'hsl(210, 80%, 60%)' : 'hsl(0, 0%, 30%)';
         ctx.lineWidth = 2;
         ctx.setLineDash([]);
         ctx.stroke();

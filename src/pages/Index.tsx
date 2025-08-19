@@ -12,59 +12,51 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div 
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: `url(${networkBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-background/80"></div>
+      <div className="relative py-20 lg:py-32">
         <div className="absolute inset-0 bg-gradient-hero"></div>
         
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <div className="flex justify-center mb-8">
             <img 
               src={stashIcon} 
               alt="StashBox" 
-              className="w-24 h-24 rounded-2xl node-glow animate-float"
+              className="w-20 h-20 rounded-xl shadow-lg"
             />
           </div>
           
-          <h1 className="text-6xl font-bold mb-6">
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-gradient">StashBox</span>
           </h1>
           
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            A decentralized, content-addressable storage network built from the ground up. 
+          <p className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+            A decentralized, content-addressable storage network. 
             Store, share, and retrieve files across a peer-to-peer network with guaranteed data integrity.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button size="lg" className="px-8 py-3">
               <Download className="w-5 h-5 mr-2" />
               Get Started
             </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 px-8 py-3">
+            <Button size="lg" variant="outline" className="px-8 py-3">
               <Github className="w-5 h-5 mr-2" />
               View Source
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <Card className="card-tech p-6 text-center">
-              <Globe className="w-8 h-8 mx-auto mb-3 text-primary" />
+              <Globe className="w-8 h-8 mx-auto mb-4 text-primary" />
               <h3 className="font-semibold mb-2">Decentralized</h3>
               <p className="text-sm text-muted-foreground">No single point of failure</p>
             </Card>
             <Card className="card-tech p-6 text-center">
-              <Shield className="w-8 h-8 mx-auto mb-3 text-accent" />
+              <Shield className="w-8 h-8 mx-auto mb-4 text-accent" />
               <h3 className="font-semibold mb-2">Content-Addressed</h3>
               <p className="text-sm text-muted-foreground">SHA1 hash verification</p>
             </Card>
             <Card className="card-tech p-6 text-center">
-              <Zap className="w-8 h-8 mx-auto mb-3 text-primary-glow" />
+              <Zap className="w-8 h-8 mx-auto mb-4 text-primary" />
               <h3 className="font-semibold mb-2">Auto-Discovery</h3>
               <p className="text-sm text-muted-foreground">Intelligent peer fetching</p>
             </Card>
